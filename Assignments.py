@@ -5,24 +5,24 @@ import hashlib
 def main():
     #Random()
     #boxVolume()
-   #print(firstAndLast())
+    #print(firstAndLast())
     #wordCount()
-   #biggerSet()
+    #biggerSet()
     #reverseMe()
     #winnerWinner()
     #shortieStraw()
     #print(upperOrLower())
-    #vAndCs()
+    vAndCs()
     #dateTime()
     #neg2Pos_pos2Neg()
     #addOnlyCalc()
-    foreverCalc()
+    #foreverCalc()
     #foreverCalcLogger()
     #hashBrown()
     #authAuth()
 
 
-
+#problem 1 
 def Random():
     randyList = []
     sum = 0
@@ -35,6 +35,8 @@ def Random():
     print(f"The list be: {randyList}")
     print(f"The sum is: {sum}" )
 
+
+#problem 2 
 def boxVolume():
     width = input("Enter width: ")
     height = input("Enter height: ")
@@ -44,6 +46,7 @@ def boxVolume():
     print(f"The value is: {volume}")
 
 
+#problem 3
 def firstAndLast():
     numList = []
     list = input("Enter list of numbers: ")
@@ -55,6 +58,7 @@ def firstAndLast():
         return False
 
 
+#problem 4 
 def wordCount():
     txt = "Python was conceived in the late 1980s by Guido van Rossum at Centrum Wiskunde & Informatica (CWI) in the Netherlands as a successor to ABC programming language, which was inspired by SETL capable of exception handling and interfacing with the Amoeba operating system. Its implementation began in December 1989. Van Rossum shouldered sole responsibility for the project, as the lead developer, until 12 July 2018, when he announced his permanent vacation from his responsibilities as Python's Benevolent Dictator For Life, a title the Python community bestowed upon him to reflect his long-term commitment as the project's chief decision-maker. In January 2019, active Python core developers elected a 5-member Steering Council to lead the project. As of 2021, the current members of this council are Barry Warsaw, Brett Cannon, Carol Willing, Thomas Wouters, and Pablo Galindo Salgado."
     stringList = txt.split(" ")
@@ -64,6 +68,8 @@ def wordCount():
             sum += 1
     print(sum)
 
+
+#problem 5
 def biggerSet():
     myList = [1,2,3]
     mySet = {3,4,5}
@@ -73,12 +79,15 @@ def biggerSet():
 
     print(mySet)
 
+
+#problem 6
 def reverseMe():
     numList = [11, 100, 101, 999, 1001]
     numList.sort(reverse=True)
     print(numList)
 
 
+#problem 7
 def winnerWinner():
     num = random.randint(1, 100)
     if num < 10:
@@ -88,6 +97,8 @@ def winnerWinner():
     else:
         print(f"{num}: You win!")
 
+
+#problem 8
 def shortieStraw():
     myList = [6,2,7,3,77,7,1]
     temp = myList[0]
@@ -97,6 +108,8 @@ def shortieStraw():
             temp = x
     print(temp)
 
+
+#problem 9
 def upperOrLower():
     message = input("Enter a string: ")
     if message.isupper():
@@ -105,8 +118,10 @@ def upperOrLower():
         return False
 
 
+#problem 10
 def vAndCs():
     word = input("Enter string pls: ")
+    word = word.lower()
     vowels = "aeiou"
     vowCow = 0
     constCownt = 0
@@ -120,6 +135,8 @@ def vAndCs():
     print(f"Vowel Count: {vowCow}")
     print(f"Consonant Count: {constCownt}")
 
+
+#problem 11
 def dateTime():
     x = str(datetime.datetime.now())
     output = open("output.txt", "w")
@@ -127,6 +144,7 @@ def dateTime():
     output.close()
 
 
+#problem 12
 def neg2Pos_pos2Neg():
     num = float(input("Enter integer: "))
 
@@ -136,6 +154,8 @@ def neg2Pos_pos2Neg():
     else:
         print(f"ERROR: {num} is not an integer.")    
 
+
+#problem 13
 def addOnlyCalc():
     num1 = input("Enter first integer: ")
     if(num1 =="exit"):
@@ -148,6 +168,7 @@ def addOnlyCalc():
     addOnlyCalc()
 
 
+#problem 14
 def foreverCalc():
     num1 = input("Enter first integer: ")
     if(num1 =="exit"):
@@ -174,6 +195,8 @@ def foreverCalc():
     return j
 
 
+
+#problem 14
 def foreverCalcLogger(x, y, op, z):
     #foreverCalc()
     d = str(datetime.datetime.now())
@@ -181,6 +204,9 @@ def foreverCalcLogger(x, y, op, z):
     output.write(f"{d}: {x} {op} {y} = {z}\n")
     output.close()
 
+
+
+#problem 15
 def hashBrown():
     data = {}
     username = "ally"
@@ -197,6 +223,8 @@ def hashBrown():
     for x, y in data.items():
         print(f"{x} : {y.hexdigest()}")
 
+
+#problem 17
 def authAuth():
     data = {}
     print("Type exit at anytime to end program...")
@@ -205,6 +233,8 @@ def authAuth():
         mode = input("Enter mode (add|login): ")
         if mode == "add":
             username = input("Enter username: ")
+            if username == "exit":
+                return False
             password = input("Enter pasword: ")
             password = hashlib.sha256(password.encode())
             data.update({username: password})
